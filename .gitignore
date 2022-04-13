@@ -1,0 +1,10 @@
+# Emacs Backup Files
+*#*#
+*.#*
+*~
+
+# Terraform Generated
+terraform.tfvars.json
+terraform.tfstate*
+.terraform/
+.terraform.lock*
