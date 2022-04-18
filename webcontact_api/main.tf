@@ -40,6 +40,11 @@ resource "aws_iam_role" "lambda" {
 }
 EOF
 
+  # Grant the lambda various permissions...
+  # Note that for SES we grant access to multiple identies (not all of which may exist...)
+  # One of the email SENDER or the full DOMAIN need to be verified to be used as a from address
+  # If SES is running in sandbox mode we can also only send emails to addresses we prove
+  # we own, and as such the RECEIVER must also be granted just in case
   inline_policy {
     name   = "${var.project}_ses_sender"
     policy = <<EOF
