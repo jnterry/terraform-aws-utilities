@@ -9,11 +9,6 @@ resource "aws_acm_certificate" "cert" {
   lifecycle {
     create_before_destroy = true
   }
-
-  tags = {
-    environment = var.environment
-    management  = "terraform"
-  }
 }
 
 resource "aws_route53_record" "cert_validation" {

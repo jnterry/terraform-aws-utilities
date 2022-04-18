@@ -1,9 +1,3 @@
-variable "environment" {
-  type        = string
-  description = "Name of the environment to deploy, attached to resources as a tag"
-  default     = "Production"
-}
-
 variable "domain_name" {
   type        = string
   description = "Name of the primary hostname to request a certifcate for"

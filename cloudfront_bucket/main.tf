@@ -5,12 +5,11 @@
 
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  acl    = var.acl
+}
 
-  tags = {
-    environment = var.environment
-    management  = "terraform"
-  }
+resource "aws_s3_bucket_acl" "bucket" {
+  bucket = aws_s3_bucket.bucket.id
+  acl    = var.acl
 }
 
 resource "aws_cloudfront_origin_access_identity" "identity" {

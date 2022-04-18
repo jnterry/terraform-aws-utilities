@@ -1,9 +1,3 @@
-variable "environment" {
-  type        = string
-  description = "Name of the environment to deploy, attached to resources as a tag"
-  default     = "Production"
-}
-
 variable "bucket_name" {
   type        = string
   description = "Name of the S3 bucket to create"
